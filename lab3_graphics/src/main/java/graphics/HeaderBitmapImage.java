@@ -2,34 +2,34 @@ package graphics;
 
 public class HeaderBitmapImage {
 
-    private short type;           // ��� ���������� ��� ���������
-    private long size;            // ����� �����
-    private short reserveField1;  // ����������� ���� �1
-    private short reserveField2;  // ����������� ���� �2
-    private long offset;          // �������
-    private long sizeOfHeader;    // ����� ���������
-    private long width;           // ������
-    private long height;          // ������
-    private short numberOfColorPlanes; // �������
-    private short bitsCount;           // ������� ��
-    private long compression;          // ��� ����������
-    private long sizeOfCompImage;      // ����� ����������� ����������
-    private long horizontalResolution; // ������������� �������� ��������
-    private long verticalResolution;   // ����������� �������� ��������
-    private long numbOfUsedColors;     // ������� ������� ������
-    private long numbOfImportantColors; // ������� �������� �������
+    private short type;
+    private long size;
+    private short reserveField1;
+    private short reserveField2;
+    private long offset;
+    private long sizeOfHeader;
+    private long width;
+    private long height;
+    private short numberOfColorPlanes;
+    private short bitsCount;
+    private long compression;
+    private long sizeOfCompImage;
+    private long horizontalResolution;
+    private long verticalResolution;
+    private long numbOfUsedColors;
+    private long numbOfImportantColors;
     
-    private long halfOfWidth;  // �������� �� ������ ���������� (�� �������� � ���������)
+    private long halfOfWidth;
     
 
-    public HeaderBitmapImage () {}  // �����������
+    public HeaderBitmapImage () {}
 		 
-    public void setType (short type) // ����� "������" ��� ���������� ������������ �������� ���� type
+    public void setType (short type)
     {
        this.type = type; 
     }
 
-    public short getType () // ����� "������" ��� ���������� ��������� ��������, �� ���������� � ��� type
+    public short getType ()
     {
   	    return type;
     }
@@ -197,7 +197,7 @@ public class HeaderBitmapImage {
     public void setValues (short type, long size, short resF1, short resF2, long offs, 
     		long sHeader, long w, long h, short nColPan, short bCount, long compr, long sComp, 
     		long hRes, long vRes, long nUsCol, long nImpCol, long half )
-    // ����� ��� ������������ ���������� ������� ���� ����� HeaderBitmapImage 
+
     {
 	    setType(type);
 	    setSize(size);
