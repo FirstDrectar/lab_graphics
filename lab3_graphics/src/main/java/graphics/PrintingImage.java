@@ -18,17 +18,6 @@ public class PrintingImage extends Application{
 
 	private HeaderBitmapImage image; 
 	private int numberOfPixels;
-
-	Color prpl = Color.rgb(136, 60, 133);
-	Color green = Color.rgb(141, 193, 64);
-	Color dark_green = Color.rgb(90, 137, 58);
-	Color light_green = Color.rgb(216, 224, 65);
-	Color wall1 = Color.rgb(227, 205, 147);
-	Color wall2 = Color.rgb(249, 244, 232);
-	Color roof1 = Color.rgb(146, 81, 161);
-	Color roof2 = Color.rgb(195, 145, 194);
-	Color dark_wood = Color.rgb(143, 88, 38);
-	Color light_wood = Color.rgb(216, 166, 92);
 	Color yellow = Color.rgb(247, 228, 24);
 	Color Mouth = Color.rgb(249, 163, 22);
 	Color blue = Color.rgb(202, 228, 248);
@@ -59,25 +48,24 @@ public class PrintingImage extends Application{
 
 		BufferedInputStream reader = new BufferedInputStream (new FileInputStream("pixels.txt"));
 
-		for(int i=0;i<height;i++)  // поки не кінець зображення по висоті
+		for(int i=0;i<height;i++)
 		{
-			for(int j=0;j<half;j++)  // поки не кінець зображення по довжині
+			for(int j=0;j<half;j++)
 			{
-				let = reader.read();  // зчитуємо один символ з файлу
+				let = reader.read();
 				let1 = let;
 				let2 = let;
-				let1 = let1&(0xf0);  // старший байт - перший піксель
-				let1 = let1>>4;  // зсув на 4 розряди
-				let2 = let2&(0x0f);  // молодший байт - другий піксель
-				if(j*2<width) // так як 1 символ кодує 2 пікселі нам необхідно пройти до середини ширини зображення
+				let1 = let1&(0xf0);
+				let1 = let1>>4;
+				let2 = let2&(0x0f);
+				if(j*2<width)
 				{
-					cir = new Circle ((j)*2,(height-1-i),1,Color.valueOf((returnPixelColor(let1)))); // за допомогою стандартного
-					// примітива Коло радіусом в 1 піксель та кольором визначеним за допомогою методу returnPixelColor малюємо піксель
-					//root.getChildren().add(cir); //додаємо об'єкт в сцену
-					if (returnPixelColor(let1) == "BLACK") // якщо колір пікселя чорний, то ставимо в масиві 1
+					cir = new Circle ((j)*2,(height-1-i),1,Color.valueOf((returnPixelColor(let1))));
+
+					if (returnPixelColor(let1) == "BLACK")
 					{
 						map[j*2][height-1-i] = '1';
-						numberOfPixels++; // збільшуємо кількість чорних пікселів
+						numberOfPixels++;
 					}
 					else
 					{
@@ -85,10 +73,9 @@ public class PrintingImage extends Application{
 					}
 				}
 
-				if(j*2+1<width) // для другого пікселя
+				if(j*2+1<width)
 				{
 					cir = new Circle ((j)*2+1,(height-1-i),1,Color.valueOf((returnPixelColor(let2))));
-					//root.getChildren().add(cir);
 					if (returnPixelColor(let2) == "BLACK")
 					{
 						map[j*2+1][height-1-i] = '1';
@@ -101,18 +88,18 @@ public class PrintingImage extends Application{
 				}
 			}
 		}
-		primaryStage.setScene(scene); // ініціалізуємо сцену
-		primaryStage.show(); // візуалізуємо сцену
+		primaryStage.setScene(scene);
+		primaryStage.show();
 		reader.close();
 
 		int[][] black;
 		black = new int[numberOfPixels][2];
 		int lich = 0;
 
-		BufferedOutputStream writer = new BufferedOutputStream (new FileOutputStream("map.txt")); // записуємо карту для руху по траекторії в файл
-		for(int i=0;i<height;i++)     // поки не кінець зображення по висоті
+		BufferedOutputStream writer = new BufferedOutputStream (new FileOutputStream("map.txt"));
+		for(int i=0;i<height;i++)
 		{
-			for(int j=0;j<width;j++)         // поки не кінець зображення по довжині
+			for(int j=0;j<width;j++)
 			{
 				if (map[j][i] == '1')
 				{
@@ -208,24 +195,39 @@ public class PrintingImage extends Application{
 
 
 		PathTransition pathTransition = new PathTransition();
-		pathTransition.setDuration(Duration.millis(3000));
+		pathTransition.setDuration(Duration.millis(5000));
 		pathTransition.setPath(path2);
 		pathTransition.setNode(root);
 		pathTransition.setAutoReverse(true);
+		FadeTransition fadeTransition = new FadeTransition(Duration.millis(3000), hand1);
+		fadeTransition.setFromValue(1.0f);
+		fadeTransition.setToValue(0.0f);
 
-		RotateTransition rotateTransition = new RotateTransition(Duration.millis(3000), root);
-		rotateTransition.setByAngle(360f);
-		rotateTransition.setCycleCount(2);
+		RotateTransition rotateTransitionHand1 = new RotateTransition(Duration.millis(1500), hand1);
+		rotateTransitionHand1.setByAngle(360f);
+		rotateTransitionHand1.setCycleCount(2);
 
-		ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(3000), root);
-		scaleTransition.setToX(0.25f);
-		scaleTransition.setToY(0.25f);
-		scaleTransition.setAutoReverse(true);
+		RotateTransition rotateTransitionHand2 = new RotateTransition(Duration.millis(1500), hand2);
+		rotateTransitionHand2.setByAngle(-360f);
+		rotateTransitionHand2.setCycleCount(2);
+
+		ScaleTransition scaleTransitionMouth = new ScaleTransition(Duration.millis(3000), mouth);
+		scaleTransitionMouth.setToX(1.9f);
+		scaleTransitionMouth.setToY(1.9f);
+		scaleTransitionMouth.setAutoReverse(true);
+
+		ScaleTransition scaleTransitionRoot = new ScaleTransition(Duration.millis(5000), root);
+		scaleTransitionRoot.setToX(0.4f);
+		scaleTransitionRoot.setToY(0.4f);
+		scaleTransitionRoot.setAutoReverse(true);
 
 		ParallelTransition parallelTransition = new ParallelTransition();
 		parallelTransition.getChildren().addAll(
-				rotateTransition,
-				scaleTransition,
+				fadeTransition,
+				rotateTransitionHand1,
+				rotateTransitionHand2,
+				scaleTransitionMouth,
+				scaleTransitionRoot,
 				pathTransition
 		);
 		parallelTransition.setCycleCount(Timeline.INDEFINITE);
@@ -233,27 +235,27 @@ public class PrintingImage extends Application{
 		parallelTransition.play();
 	}
 	
-	private String returnPixelColor (int color) // ����� ��� ������������ ������� 16-������ ����������
+	private String returnPixelColor (int color)
 	{
 		String col = "BLACK";
 		switch(color)
 		   {
-		      case 0: return "BLACK";     //BLACK;
-		      case 1: return "LIGHTCORAL";  //LIGHTCORAL;
-		      case 2: return "GREEN";     //GREEN
-		      case 3: return "BROWN";     //BROWN
-		      case 4: return "BLUE";      //BLUE;
-		      case 5: return "MAGENTA";   //MAGENTA;
-		      case 6: return "CYAN";      //CYAN;
-		      case 7: return "LIGHTGRAY"; //LIGHTGRAY;
-		      case 8: return "DARKGRAY";  //DARKGRAY;
-		      case 9: return "RED";       //RED;
-		      case 10:return "LIGHTGREEN";//LIGHTGREEN
-		      case 11:return "YELLOW";    //YELLOW;
-		      case 12:return "LIGHTBLUE"; //LIGHTBLUE;
-		      case 13:return "LIGHTPINK";    //LIGHTMAGENTA
-		      case 14:return "LIGHTCYAN";    //LIGHTCYAN;
-		      case 15:return "WHITE";    //WHITE;
+		      case 0: return "BLACK";
+		      case 1: return "LIGHTCORAL";
+		      case 2: return "GREEN";
+		      case 3: return "BROWN";
+		      case 4: return "BLUE";
+		      case 5: return "MAGENTA";
+		      case 6: return "CYAN";
+		      case 7: return "LIGHTGRAY";
+		      case 8: return "DARKGRAY";
+		      case 9: return "RED";
+		      case 10:return "LIGHTGREEN";
+		      case 11:return "YELLOW";
+		      case 12:return "LIGHTBLUE";
+		      case 13:return "LIGHTPINK";
+		      case 14:return "LIGHTCYAN";
+		      case 15:return "WHITE";
 		   }
 		   return col;
 	}
