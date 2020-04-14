@@ -199,9 +199,31 @@ public class PrintingImage extends Application{
 		pathTransition.setPath(path2);
 		pathTransition.setNode(root);
 		pathTransition.setAutoReverse(true);
-		FadeTransition fadeTransition = new FadeTransition(Duration.millis(3000), hand1);
-		fadeTransition.setFromValue(1.0f);
-		fadeTransition.setToValue(0.0f);
+
+		FadeTransition fadeTransitionHand1 = new FadeTransition(Duration.millis(3000), hand1);
+		fadeTransitionHand1.setFromValue(1.0f);
+		fadeTransitionHand1.setToValue(0.0f);
+		FadeTransition fadeTransitionHand2 = new FadeTransition(Duration.millis(3000), hand2);
+		fadeTransitionHand2.setFromValue(0.0f);
+		fadeTransitionHand2.setToValue(1.0f);
+		RotateTransition rotateTransitionEye1 = new RotateTransition(Duration.millis(1500), eye1);
+		rotateTransitionEye1.setByAngle(360f);
+		rotateTransitionEye1.setCycleCount(2);
+
+		Path pathEye1 = new Path();
+		pathEye1.getElements().add(new MoveTo(180, 140));
+		pathEye1.getElements().add(new CubicCurveTo(380, 0, 380, 120, 200, 120));
+		pathEye1.getElements().add(new CubicCurveTo(0, 120, 0, 240, 180, 140));
+
+		PathTransition pathTransitioneye1 = new PathTransition();
+		pathTransitioneye1.setDuration(Duration.millis(5000));
+		pathTransitioneye1.setPath(pathEye1);
+		pathTransitioneye1.setNode(eye1);
+
+		pathTransitioneye1.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
+		pathTransitioneye1.setCycleCount(Timeline.INDEFINITE);
+		pathTransitioneye1.setAutoReverse(true);
+		pathTransitioneye1.play();
 
 		RotateTransition rotateTransitionHand1 = new RotateTransition(Duration.millis(1500), hand1);
 		rotateTransitionHand1.setByAngle(360f);
@@ -211,10 +233,11 @@ public class PrintingImage extends Application{
 		rotateTransitionHand2.setByAngle(-360f);
 		rotateTransitionHand2.setCycleCount(2);
 
-		ScaleTransition scaleTransitionMouth = new ScaleTransition(Duration.millis(3000), mouth);
-		scaleTransitionMouth.setToX(1.9f);
-		scaleTransitionMouth.setToY(1.9f);
-		scaleTransitionMouth.setAutoReverse(true);
+
+
+		RotateTransition rotateTransitionMouth = new RotateTransition(Duration.millis(2500), mouth);
+		rotateTransitionMouth.setByAngle(-360f);
+		rotateTransitionMouth.setCycleCount(2);
 
 		ScaleTransition scaleTransitionRoot = new ScaleTransition(Duration.millis(5000), root);
 		scaleTransitionRoot.setToX(0.4f);
@@ -223,11 +246,13 @@ public class PrintingImage extends Application{
 
 		ParallelTransition parallelTransition = new ParallelTransition();
 		parallelTransition.getChildren().addAll(
-				fadeTransition,
+				fadeTransitionHand1,
+				fadeTransitionHand2,
 				rotateTransitionHand1,
 				rotateTransitionHand2,
-				scaleTransitionMouth,
 				scaleTransitionRoot,
+				rotateTransitionEye1,
+				rotateTransitionMouth,
 				pathTransition
 		);
 		parallelTransition.setCycleCount(Timeline.INDEFINITE);
