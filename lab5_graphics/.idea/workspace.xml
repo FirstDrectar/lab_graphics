@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a3eb899a-2833-4b60-896c-e0352a993905" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1biRjTgIT3n5FXPdA82hmQvl0LI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558968576771" />
+    <property name="last_opened_file_path" value="C:/Program Files/Java/Java3D/1.5.1/bin" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Дом\IdeaProjects\java4\source_folder" />
+      <recent name="C:\Users\Дом\IdeaProjects\java4\source_folder\car" />
+      <recent name="C:\Users\Дом\IdeaProjects\java4\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Cat">
+    <configuration name="Cat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Cat" />
+      <module name="java4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HelloUniverse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HelloUniverse" />
+      <module name="java4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="java4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Pencil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Pencil" />
+      <module name="java4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.HelloUniverse" />
+      <item itemvalue="Application.Pencil" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Cat" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Cat" />
+        <item itemvalue="Application.HelloUniverse" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a3eb899a-2833-4b60-896c-e0352a993905" name="Default Changelist" comment="" />
+      <created>1558903539433</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558903539433</updated>
+      <workItem from="1589113073730" duration="16000" />
+      <workItem from="1589113381729" duration="1466000" />
+      <workItem from="1589114868391" duration="276000" />
+      <workItem from="1589115165176" duration="1145000" />
+      <workItem from="1589116363504" duration="46000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589116051492">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="561" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589116051492" />
+    <state x="1106" y="261" key="FileChooserDialogImpl" timestamp="1589113255451">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1106" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589113255451" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1589116310833">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589116310833" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1589116310833">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589116310833" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1589116310833">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589116310833" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1589116310833">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589116310833" />
+    <state x="880" y="94" key="SettingsEditor" timestamp="1589113263685">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="880" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589113263685" />
+    <state x="1136" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1589116365380">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1136" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589116365380" />
+  </component>
+</project>
